@@ -151,14 +151,14 @@ class REST_Model extends CI_Model {
     protected function transformResultRow($row) {
         return $row;
     }
-
+    
     /**
      * Trasforma lista risultati
      * @param array $results Risultati da trasformare
      * @return array Risultati dopo la trasformazione
      */    
     private function transformResultList($results) {
-        return array_map($this->transformResultRow, $results);
+        return array_map(array($this, 'transformResultRow'), $results);
     }
     
     public function getTableName() {
