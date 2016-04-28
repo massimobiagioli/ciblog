@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+define('HEADER_API_KEY', 'X-CI-APIKEY');
+define('ENV_API_KEY', 'CI_APIKEY');
+        
 /**
  * Superclasse controller
  */
@@ -342,15 +345,13 @@ class REST_Controller extends CI_Controller {
     
     /**
      * Effettua controllo autenticazione
-     * (Il metodo standard effettua il controllo su "X-AUTH" presente nell'header della request)
      * @return boolean true se autenticato, altrimenti false
      */
     protected function checkAuth() {
-        //$authKey = $this->input->request_headers()['X-AUTH'];
-        
-        // TODO ....
-        
-        return true;
+        if (!array_key_exists(HEADER_API_KEY, $this->input->request_headers())) {
+            return false;
+        }                        
+        return $this->input->request_headers()[HEADER_API_KEY] === getenv(ENV_API_KEY);
     }
     
     /**
