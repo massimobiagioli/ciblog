@@ -1,0 +1,17 @@
+{
+  "name": "03-HMVC-redux",
+  "homepage": "https://github.com/massimobiagioli/ciblog",
+  "authors": [
+    "Massimo Biagioli <biagiolimassimo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
