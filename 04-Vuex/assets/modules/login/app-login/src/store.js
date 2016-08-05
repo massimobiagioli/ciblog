@@ -25,7 +25,7 @@ export const mutations = {
       }
 
       // Invoca il server per navigazione su finestra principale
-      backendInterface.redirect('/dashboard/dashboard/');
+      backendInterface.redirect('/dashboard/home/');
     }
     backendInterface.sendEvent(path, 'POST', toSend, onSuccessClosure);
   }
